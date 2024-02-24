@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw2byypkvyfi0"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_svvx5"]
+[ext_resource type="Script" path="res://scripts/classes/state/states/Fall.gd" id="2_6h8o1"]
+[ext_resource type="PackedScene" uid="uid://yls46ho0l10r" path="res://assets/3D Models/Capsule Basics/capsule_basic_player.tscn" id="2_s70cy"]
+[ext_resource type="Script" path="res://scenes/player/camera_root.gd" id="4_ox7ev"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bnvot"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_svvx5")
+camera = NodePath("")
+
+[node name="Capsule_Basic_Player" parent="." instance=ExtResource("2_s70cy")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0710386, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06906, 0)
+shape = SubResource("CapsuleShape3D_bnvot")
+
+[node name="StateManager" type="Node" parent="."]
+script = ExtResource("2_6h8o1")
+
+[node name="camera_root" type="Node3D" parent="."]
+script = ExtResource("4_ox7ev")
+
+[node name="hoz" type="Node3D" parent="camera_root"]
+
+[node name="vert" type="Node3D" parent="camera_root/hoz"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.78897, 0)
+
+[node name="Camera3D" type="Camera3D" parent="camera_root/hoz/vert"]
+transform = Transform3D(1, 0, 0, 0, 0.976217, 0.216797, 0, -0.216797, 0.976217, 0, 0, 3.83064)

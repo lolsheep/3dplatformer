@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://bmtsabv6wreqp"]
+
+[ext_resource type="Script" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/Scripts/Default_Movement_Script.gd" id="1_ssqrc"]
+[ext_resource type="Material" uid="uid://crcaynmhfgsus" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/Materials/Capsule_Caharacter_Pack_Demo_Level_Platfrom.tres" id="1_xticx"]
+[ext_resource type="PackedScene" uid="uid://bc00bin6mvomx" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_godot.tscn" id="3_3kmkc"]
+[ext_resource type="PackedScene" uid="uid://dfm8bdklmyofl" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_enemy_01.tscn" id="4_e2it3"]
+[ext_resource type="PackedScene" uid="uid://cgx3jbkx7pq3k" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_enemy_02.tscn" id="5_byw1u"]
+[ext_resource type="PackedScene" uid="uid://dqqcpuqswx6g" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_enemy_03.tscn" id="6_sei0k"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_knvjk"]
+sky_horizon_color = Color(0.628603, 0.650755, 0.682598, 1)
+ground_bottom_color = Color(0.129412, 0.14902, 0.180392, 1)
+ground_horizon_color = Color(0.628603, 0.650755, 0.682598, 1)
+
+[sub_resource type="Sky" id="Sky_r5npw"]
+sky_material = SubResource("ProceduralSkyMaterial_knvjk")
+
+[sub_resource type="Environment" id="Environment_76ycv"]
+background_mode = 2
+sky = SubResource("Sky_r5npw")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bd47w"]
+
+[node name="Demo Scene 01" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_76ycv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999905, 0.0119437, -0.00689567, -7.75763e-09, 0.499998, 0.866026, 0.0137914, -0.865944, 0.499951, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = ExtResource("1_xticx")
+use_collision = true
+size = Vector3(10, 1, 10)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 6.4317, 11.7552)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+script = ExtResource("1_ssqrc")
+
+[node name="Capsule_Basic_Godot" parent="CharacterBody3D" instance=ExtResource("3_3kmkc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_bd47w")
+
+[node name="Capsule_Basic_Enemy_01" parent="." instance=ExtResource("4_e2it3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
+
+[node name="Capsule_Basic_Enemy_02" parent="." instance=ExtResource("5_byw1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Capsule_Basic_Enemy_03" parent="." instance=ExtResource("6_sei0k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3)

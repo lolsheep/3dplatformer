@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cgsmasmpjhwp1"]
+
+[ext_resource type="Texture2D" uid="uid://hb6vx4qncelj" path="res://AssetHunts - GameDev Starter Kit - Capsule Character Pack/Materials/Textures/Capsule_Caharacter_Pack_Color_Palette_01_Free.png" id="1_db3mx"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_db3mx")
+normal_enabled = true

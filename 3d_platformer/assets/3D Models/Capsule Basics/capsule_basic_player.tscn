@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://yls46ho0l10r"]
+
+[ext_resource type="PackedScene" uid="uid://n1sroh3qj6hs" path="res://assets/Source Files/Capsule_Basic_Player.glb" id="1_fcs15"]
+[ext_resource type="Material" uid="uid://cgsmasmpjhwp1" path="res://assets/Materials/Capsule_Caharacter_Pack_Color_Palette_01.tres" id="2_0k8re"]
+
+[node name="Capsule_Basic_Player" instance=ExtResource("1_fcs15")]
+
+[node name="Capsule_Basic_Player" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_0k8re")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfhroi2847bpy"]
+
+[ext_resource type="PackedScene" uid="uid://blmvmdndnuw5k" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/Source Files/Capsule_Basic_Player_with_Arrow_01.glb" id="1_twr80"]
+[ext_resource type="Material" uid="uid://cgsmasmpjhwp1" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/Materials/Capsule_Caharacter_Pack_Color_Palette_01.tres" id="2_qhqd6"]
+
+[node name="Capsule_Basic_Player_with_Arrow_01" instance=ExtResource("1_twr80")]
+
+[node name="Capsule_Basic_Player_with_Arrow_01" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_qhqd6")

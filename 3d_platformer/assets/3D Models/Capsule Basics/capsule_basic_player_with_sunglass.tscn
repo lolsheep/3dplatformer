@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cetc2r0wvgbfj"]
+
+[ext_resource type="PackedScene" uid="uid://c4kqdyx7yqrpn" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/Source Files/Capsule_Basic_Player_with_Sunglass.glb" id="1_cnn50"]
+[ext_resource type="Material" uid="uid://cgsmasmpjhwp1" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/Materials/Capsule_Caharacter_Pack_Color_Palette_01.tres" id="2_ugsg2"]
+
+[node name="Capsule_Basic_Player_with_Sunglass" instance=ExtResource("1_cnn50")]
+
+[node name="Capsule_Basic_Player_with_Sunglass" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ugsg2")

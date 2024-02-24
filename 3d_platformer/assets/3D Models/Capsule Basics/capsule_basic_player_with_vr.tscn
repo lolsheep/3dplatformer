@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0vm1h08qjmoj"]
+
+[ext_resource type="PackedScene" uid="uid://ca388l2p8qpxb" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/Source Files/Capsule_Basic_Player_with_VR.glb" id="1_msofh"]
+[ext_resource type="Material" uid="uid://cgsmasmpjhwp1" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/Materials/Capsule_Caharacter_Pack_Color_Palette_01.tres" id="2_nuiep"]
+
+[node name="Capsule_Basic_Player_with_VR" instance=ExtResource("1_msofh")]
+
+[node name="Capsule_Basic_Player_with_VR" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_nuiep")

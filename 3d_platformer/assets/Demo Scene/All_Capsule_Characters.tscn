@@ -1,0 +1,50 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6y8hikkgveay"]
+
+[ext_resource type="PackedScene" uid="uid://bc00bin6mvomx" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_godot.tscn" id="1_dof8a"]
+[ext_resource type="PackedScene" uid="uid://dfm8bdklmyofl" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_enemy_01.tscn" id="2_kmhlu"]
+[ext_resource type="PackedScene" uid="uid://cgx3jbkx7pq3k" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_enemy_02.tscn" id="3_rlhwb"]
+[ext_resource type="PackedScene" uid="uid://dqqcpuqswx6g" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_enemy_03.tscn" id="4_d88x0"]
+[ext_resource type="PackedScene" uid="uid://cbm6yc6j74558" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_player_with_arrow_02.tscn" id="5_dld7g"]
+[ext_resource type="PackedScene" uid="uid://cfhroi2847bpy" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_player_with_arrow_01.tscn" id="6_xn1vv"]
+[ext_resource type="PackedScene" uid="uid://cmpbru5v5bjcj" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_player_with_cap.tscn" id="7_35v78"]
+[ext_resource type="PackedScene" uid="uid://cetc2r0wvgbfj" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_player_with_sunglass.tscn" id="8_8h1vj"]
+[ext_resource type="PackedScene" uid="uid://b0vm1h08qjmoj" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_player_with_vr.tscn" id="9_i0vcc"]
+[ext_resource type="PackedScene" uid="uid://yls46ho0l10r" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/3D Models/Capsule Basics/capsule_basic_player.tscn" id="13_rhpv1"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mkg4q"]
+
+[node name="All_Capsule_Characters" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+mesh = SubResource("CapsuleMesh_mkg4q")
+
+[node name="Capsule_Basic_Godot" parent="." instance=ExtResource("1_dof8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 1)
+
+[node name="Capsule_Basic_Enemy_01" parent="." instance=ExtResource("2_kmhlu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+
+[node name="Capsule_Basic_Enemy_02" parent="." instance=ExtResource("3_rlhwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Capsule_Basic_Enemy_03" parent="." instance=ExtResource("4_d88x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="Capsule_Basic_Player" parent="." instance=ExtResource("13_rhpv1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1)
+
+[node name="Capsule_Basic_Player_with_Arrow_01" parent="." instance=ExtResource("6_xn1vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Capsule_Basic_Player_with_Arrow_02" parent="." instance=ExtResource("5_dld7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="Capsule_Basic_Player_with_Cap" parent="." instance=ExtResource("7_35v78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+
+[node name="Capsule_Basic_Player_with_Sunglass" parent="." instance=ExtResource("8_8h1vj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="Capsule_Basic_Player_with_VR" parent="." instance=ExtResource("9_i0vcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)

@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://bw2byypkvyfi0"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_svvx5"]
+[ext_resource type="Script" path="res://scripts/classes/state/states/Fall.gd" id="2_6h8o1"]
+[ext_resource type="PackedScene" uid="uid://yls46ho0l10r" path="res://assets/3D Models/Capsule Basics/capsule_basic_player.tscn" id="2_s70cy"]
+[ext_resource type="Script" path="res://scripts/classes/state/state_manager.gd" id="3_ffec3"]
+[ext_resource type="Script" path="res://scenes/player/camera_root.gd" id="4_ox7ev"]
+[ext_resource type="Script" path="res://scripts/classes/state/states/Idle.gd" id="4_txdga"]
+[ext_resource type="Script" path="res://scripts/classes/state/states/Jump.gd" id="6_be7n1"]
+[ext_resource type="Script" path="res://scripts/classes/state/states/Walk.gd" id="7_un73v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bnvot"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("state_manager")]
+script = ExtResource("1_svvx5")
+state_manager = NodePath("StateManager")
+
+[node name="Capsule_Basic_Player" parent="." instance=ExtResource("2_s70cy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0710386, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10019, 0)
+shape = SubResource("CapsuleShape3D_bnvot")
+
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("idle", "walk", "jump", "fall")]
+script = ExtResource("3_ffec3")
+idle = NodePath("Idle")
+walk = NodePath("Walk")
+jump = NodePath("Jump")
+fall = NodePath("Fall")
+
+[node name="Idle" type="Node" parent="StateManager"]
+script = ExtResource("4_txdga")
+
+[node name="Fall" type="Node" parent="StateManager"]
+script = ExtResource("2_6h8o1")
+
+[node name="Jump" type="Node" parent="StateManager"]
+script = ExtResource("6_be7n1")
+
+[node name="Walk" type="Node" parent="StateManager"]
+script = ExtResource("7_un73v")
+
+[node name="camera_root" type="Node3D" parent="."]
+script = ExtResource("4_ox7ev")
+
+[node name="hoz" type="Node3D" parent="camera_root"]
+
+[node name="vert" type="Node3D" parent="camera_root/hoz"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.17543, 0)
+
+[node name="Camera3D" type="Camera3D" parent="camera_root/hoz/vert"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157, 5.103)

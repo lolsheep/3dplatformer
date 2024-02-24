@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc00bin6mvomx"]
+
+[ext_resource type="PackedScene" uid="uid://cje8k8bbokyfx" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/Source Files/Capsule_Basic_Godot.glb" id="1_60e7k"]
+[ext_resource type="Material" uid="uid://c4wr2ay0bu0fb" path="res://AssetHunts - GameDev Essential Kit - Capsule Character Pack/Materials/Capsule_Caharacter_Pack_Capsule_Godot.tres" id="2_8dkkm"]
+
+[node name="Capsule_Basic_Godot" instance=ExtResource("1_60e7k")]
+
+[node name="Capsule_Basic_Godot" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_8dkkm")
